@@ -56,19 +56,14 @@
             <!-- overylay class usage -->
             <div class="container">
                 <div class="col-md-10 col-md-offset-1 text-center">
-                    <h2 class="page-header head-set">公司概览</h2>
-                    <h3 class="lead text-left">
-                        &nbsp; &nbsp; &nbsp; &nbsp; <strong ng-bind="company_name"></strong> 成立于2017年，是一家软件开发为主的IT公司。
-                        <p>“高效，快捷，热情，准确，周到”是我们的服务宗旨。我们坚持“以质量求生存 以质量求发展”的经营理念。在保证质量、真诚合作的前提下，与客户共同努力，争取双赢。</p>
-                        <p>&nbsp; &nbsp; &nbsp; &nbsp; 公司地点位于西安市高新区。办公环境优美，仓储条件一流。交通便利，设施齐全，通讯发达。在保证质量、真诚合作的前提下，与客户共同努力，争取双赢。</p>
-                    </h3>
-
+                    <h2 class="page-header head-set">公司名片</h2>
+                    <p class="lead text-left" ng-repeat="card in cards">
+                        &emsp;&emsp;<span ng-bind="card"></span>
+                    </p>
                     <hr>
                 </div>
-
             </div>
         </div>
-
     </div>
     <!--  -->
     <div id="notice">
@@ -191,28 +186,28 @@
             <div class="col-sm-10 col-sm-offset-1">
                 <div class="row form-group">
                     <div class="col-xs-6">
-                        <input type="text" class="form-control" id="firstName" name="name" placeholder="姓名">
+                        <input type="text" class="form-control" ng-model="contact_username" placeholder="姓名">
                     </div>
                     <div class="col-xs-6">
-                        <input type="text" class="form-control" id="organization" name="organization" placeholder="公司">
+                        <input type="text" class="form-control" ng-model="contact_company"  placeholder="公司">
                     </div>
                 </div>
                 <div class="row form-group">
                     <div class="col-xs-6">
-                        <input type="text" class="form-control" name="email" placeholder="邮箱">
+                        <input type="text" class="form-control" ng-model="contact_phone" placeholder="电话">
                     </div>
                     <div class="col-xs-6">
-                        <input type="text" class="form-control" name="phone" placeholder="电话">
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <div class="col-xs-12">
-                        <textarea class="form-control" rows="5" placeholder="说点什么吧..."></textarea>
+                        <input type="text" class="form-control" ng-model="contact_qq" placeholder="QQ">
                     </div>
                 </div>
                 <div class="row form-group">
                     <div class="col-xs-12">
-                        <button class="btn btn-default pull-right">发送</button>
+                        <textarea class="form-control" rows="5" ng-model="contact_content" placeholder="说点什么吧..."></textarea>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-xs-12">
+                        <button class="btn btn-default pull-right" ng-click="contact()">发送</button>
                     </div>
                 </div>
 
