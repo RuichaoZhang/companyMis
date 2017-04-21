@@ -195,6 +195,7 @@ public class ProductInfoController extends BaseController {
 		AjaxJson j = new AjaxJson();
 		message = "公司产品表添加成功";
 		try{
+			productInfo.getProductLink();
 			productInfoService.save(productInfo);
 			systemService.addLog(message, Globals.Log_Type_INSERT, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
