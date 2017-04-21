@@ -6,7 +6,7 @@ angular.module('app', [])
         }
 
         $.ajax({
-            url: "/cardInfoController.do?publishInfo",
+            url: '/productInfoController.do?publishInfo',
             async: false,
             success: function(data){
                 $scope.data = eval('(' + data + ')');
@@ -14,41 +14,70 @@ angular.module('app', [])
             }
         });
         //公司名
-        $scope.company_name = $scope.data.cardName;
+        $scope.cardName = $scope.data.cardInfoEntity.cardName;
         //公司名片
-        $scope.cards = formatSpan($scope.data.cardContent);
-        $scope.notices = $scope.data.notices;
+        $scope.cardContent = formatSpan($scope.data.cardInfoEntity.cardContent);
+        //公告
+        $scope.gonggaoEntities = $scope.data.gonggaoEntities;
+        for (var i = 0; i < $scope.gonggaoEntities.length; i++) {
+            $scope.gonggaoEntities[i].gonggaoNeirong = formatSpan($scope.gonggaoEntities[i].gonggaoNeirong);
+        }
+        //产品
         $scope.products = $scope.data.products;
-        $scope.links = $scope.data.links;
-
         $scope.selectProduct = function(item) {
-            $scope.currentItem = item;
+            $scope.currentProduct = item;
+            $scope.currentProduct.productContent = formatSpan($scope.currentProduct.productContent);
+            console.log($scope.currentProduct.productContent);
         }
-        $scope.keydown = function(item) {
-            console.log($scope.c);
+
+        //友情链接
+        $scope.linkageinfoEntities = $scope.data.linkageinfoEntities;
+        $scope.newPage = function (l) {
+            if (l.indexOf('http://') == -1) {
+                l = 'http://' + l;
+            }
+            window.open(l);
         }
 
 
-
-
-
-
+        $scope.tipShow = false;
+        $scope.alertType = 'alert alert-warning';
 
         //联系我们
         $scope.contact = function () {
-            $.post('post', {
-                contact_username: $scope.contact_username,
-                contact_company: $scope.contact_company,
-                contact_phone: $scope.contact_phone,
-                contact_qq: $scope.contact_qq,
-                contact_content: $scope.contact_content,
+            console.log($scope.boadrPerson);
+            if ($scope.boadrPerson == undefined || $scope.boadrPerson == ''
+                || $scope.boadrTel == undefined || $scope.boadrTel == '') {
+                $scope.tipShow = true;
+                $scope.tipContent = '留下您的姓名和电话吧,方便联系!';
+                return;
+            }
+            if ($scope.boadrContent == undefined || $scope.boadrContent == '') {
+                $scope.tipShow = true;
+                $scope.tipContent = '说点什么吧!';
+                return;
+            }
+            $.post('/boardInfoController.do?doAdd', {
+                boadrPerson: $scope.boadrPerson,
+                boadrCompany: $scope.boadrCompany,
+                boadrTel: $scope.boadrTel,
+                boadrQq: $scope.boadrQq,
+                boadrContent: $scope.boadrContent,
             }, function (data) {
-
+                var result = eval('(' + data + ')')
+                console.log(result.success);
+                if (result.success) {
+                    $scope.tipShow = true;
+                    $scope.alertType = 'alert alert-success';
+                    $scope.tipContent = '留言成功!';
+                    $scope.$apply();
+                    setTimeout(function () {
+                        $scope.tipShow = false;
+                        $scope.alertType = 'alert alert-warning';
+                        $scope.$apply();
+                    }, 2000);
+                }
             });
-            console.log($scope.contact_username);
-            console.log($scope.contact_company);
-            console.log($scope.contact_phone);
-            console.log($scope.contact_qq);
-            console.log($scope.contact_content);
         }
+
     }]);

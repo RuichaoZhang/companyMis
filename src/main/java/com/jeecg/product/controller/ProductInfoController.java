@@ -1,4 +1,11 @@
 package com.jeecg.product.controller;
+import com.jeecg.card.entity.CardInfoEntity;
+import com.jeecg.card.service.CardInfoServiceI;
+import com.jeecg.gonggao.entity.GonggaoEntity;
+import com.jeecg.gonggao.service.GonggaoServiceI;
+import com.jeecg.link.entity.LinkageinfoEntity;
+import com.jeecg.link.service.LinkageinfoServiceI;
+import com.jeecg.product.entity.Company;
 import com.jeecg.product.entity.ProductInfoEntity;
 import com.jeecg.product.service.ProductInfoServiceI;
 import java.util.ArrayList;
@@ -8,6 +15,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.map.JsonMappingException;
+import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -83,14 +93,20 @@ public class ProductInfoController extends BaseController {
 	private static final Logger logger = Logger.getLogger(ProductInfoController.class);
 
 	@Autowired
-	private ProductInfoServiceI productInfoService;
-	@Autowired
 	private SystemService systemService;
 	@Autowired
 	private Validator validator;
 	@Autowired
 	private CgFormFieldServiceI cgFormFieldService;
-	
+
+	@Autowired
+	private CardInfoServiceI cardInfoService;
+	@Autowired
+	private GonggaoServiceI gonggaoService;
+	@Autowired
+	private LinkageinfoServiceI linkService;
+	@Autowired
+	private ProductInfoServiceI productInfoService;
 
 
 	/**
@@ -432,5 +448,40 @@ public class ProductInfoController extends BaseController {
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable("id") String id) {
 		productInfoService.deleteEntityById(ProductInfoEntity.class, id);
+	}
+	@RequestMapping(params = "publishInfo")
+	@ResponseStatus(HttpStatus.OK)
+	public void publishInfo(HttpServletRequest request,HttpServletResponse response
+			, DataGrid dataGrid,ModelMap modelMap) {
+		CardInfoEntity cardInfoEntity = (CardInfoEntity) cardInfoService.findByQueryString("from CardInfoEntity").get(0);
+		List<GonggaoEntity> gonggaoEntities = gonggaoService.findByQueryString("from GonggaoEntity");
+		List<LinkageinfoEntity> linkageinfoEntities = linkService.findByQueryString("from LinkageinfoEntity");
+		List<ProductInfoEntity> productInfoEntities = productInfoService.findByQueryString("from ProductInfoEntity");
+		ObjectMapper mapper = new ObjectMapper();
+		Company t = new Company();
+		t.setCardInfoEntity(cardInfoEntity);
+		t.setLinkageinfoEntities(linkageinfoEntities);
+		t.setProducts(productInfoEntities);
+		t.setGonggaoEntities(gonggaoEntities);
+		String json = null;
+		try {
+			json=mapper.writeValueAsString(t);
+		} catch (JsonGenerationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			response.getWriter().append(json);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
 }
