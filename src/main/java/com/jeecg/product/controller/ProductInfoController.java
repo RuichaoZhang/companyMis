@@ -440,7 +440,7 @@ public class ProductInfoController extends BaseController {
 	public void publishInfo(HttpServletRequest request,HttpServletResponse response
 			, DataGrid dataGrid,ModelMap modelMap) {
 		CardInfoEntity cardInfoEntity = (CardInfoEntity) cardInfoService.findByQueryString("from CardInfoEntity").get(0);
-		GonggaoEntity gonggaoEntity = (GonggaoEntity) gonggaoService.findByQueryString("from GonggaoEntity").get(0);
+		List<GonggaoEntity> gonggaoEntities = gonggaoService.findByQueryString("from GonggaoEntity");
 		List<LinkageinfoEntity> linkageinfoEntities = linkService.findByQueryString("from LinkageinfoEntity");
 		List<ProductInfoEntity> productInfoEntities = productInfoService.findByQueryString("from ProductInfoEntity");
 		ObjectMapper mapper = new ObjectMapper();
@@ -448,7 +448,7 @@ public class ProductInfoController extends BaseController {
 		t.setCardInfoEntity(cardInfoEntity);
 		t.setLinkageinfoEntities(linkageinfoEntities);
 		t.setProducts(productInfoEntities);
-		t.setGonggaoEntity(gonggaoEntity);
+		t.setGonggaoEntities(gonggaoEntities);
 		String json = null;
         try {
 			json=mapper.writeValueAsString(t);

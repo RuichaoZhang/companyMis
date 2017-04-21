@@ -14,7 +14,7 @@ public class Company {
 	private List<NoticeInfoEntity> notices; 
 	private List<ProductInfoEntity> products;
 	private List<LinkageinfoEntity> linkageinfoEntities;
-	private GonggaoEntity gonggaoEntity;
+	private List<GonggaoEntity> gonggaoEntities;
 	private CardInfoEntity cardInfoEntity;
 	
 	
@@ -24,11 +24,11 @@ public class Company {
 	public void setCardInfoEntity(CardInfoEntity cardInfoEntity) {
 		this.cardInfoEntity = cardInfoEntity;
 	}
-	public GonggaoEntity getGonggaoEntity() {
-		return gonggaoEntity;
+	public List<GonggaoEntity> getGonggaoEntities() {
+		return gonggaoEntities;
 	}
-	public void setGonggaoEntity(GonggaoEntity gonggaoEntity) {
-		this.gonggaoEntity = gonggaoEntity;
+	public void setGonggaoEntities(List<GonggaoEntity> gonggaoEntities) {
+		this.gonggaoEntities = gonggaoEntities;
 	}
 	public List<LinkageinfoEntity> getLinkageinfoEntities() {
 		return linkageinfoEntities;
