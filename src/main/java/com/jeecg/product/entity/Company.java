@@ -8,9 +8,6 @@ import com.jeecg.link.entity.LinkageinfoEntity;
 import com.jeecg.notice.entity.NoticeInfoEntity;
 
 public class Company {
-	private String company_name;
-	private String company_card;
-	String notice;
 	private List<NoticeInfoEntity> notices; 
 	private List<ProductInfoEntity> products;
 	private List<LinkageinfoEntity> linkageinfoEntities;
@@ -35,24 +32,6 @@ public class Company {
 	}
 	public void setLinkageinfoEntities(List<LinkageinfoEntity> linkageinfoEntities) {
 		this.linkageinfoEntities = linkageinfoEntities;
-	}
-	public String getCompany_name() {
-		return company_name;
-	}
-	public void setCompany_name(String company_name) {
-		this.company_name = company_name;
-	}
-	public String getCompany_card() {
-		return company_card;
-	}
-	public void setCompany_card(String company_card) {
-		this.company_card = company_card;
-	}
-	public String getNotice() {
-		return notice;
-	}
-	public void setNotice(String notice) {
-		this.notice = notice;
 	}
 	public List<NoticeInfoEntity> getNotices() {
 		return notices;
