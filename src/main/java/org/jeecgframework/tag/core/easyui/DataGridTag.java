@@ -394,7 +394,13 @@ public class DataGridTag extends TagSupport {
 				String[] dic = dictionary.split(",");
 				String text = "";
 				String value = "";
-				String sql = "select " + dic[1] + " as field," + dic[2]
+				String val = "";
+				if(dic.length>2){
+					val = dic[2];
+				}else{
+					val = dic[1];
+				}
+				String sql = "select " + dic[1] + " as field," + val
 						+ " as text from " + dic[0];
 				systemService = ApplicationContextUtil.getContext().getBean(
 						SystemService.class);

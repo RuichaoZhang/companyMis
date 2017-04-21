@@ -152,6 +152,9 @@ public class FormValidationTag extends TagSupport {
 			//style.css
 			sb.append(SysThemesUtil.getValidformStyleTheme(sysThemesEnum));
 			//tablefrom.css
+			if(lang==null || "".equals(lang)){
+				lang="";
+			}
 			sb.append(SysThemesUtil.getValidformTablefrom(sysThemesEnum));
 			sb.append(StringUtil.replace("<script type=\"text/javascript\" src=\"plug-in/Validform/js/Validform_v5.3.1_min_{0}.js\"></script>", "{0}", lang));
 			sb.append(StringUtil.replace("<script type=\"text/javascript\" src=\"plug-in/Validform/js/Validform_Datatype_{0}.js\"></script>", "{0}", lang));

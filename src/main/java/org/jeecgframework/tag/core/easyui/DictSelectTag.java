@@ -319,6 +319,9 @@ public class DictSelectTag extends TagSupport {
 	 * @作者：Alexander
 	 */
 	private List<Map<String, Object>> queryDic() {
+		if(dictText.equals("")||dictText==null){
+			dictText = dictField;
+		}
 		String sql = "select " + dictField + " as field," + dictText
 				+ " as text from " + dictTable;
 	       if(dictCondition!=null){
