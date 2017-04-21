@@ -9,6 +9,7 @@
    <t:dgCol title="发布时间"  field="productTime" formatter="yyyy-MM-dd hh:mm:ss"   queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="发布部门"  field="productType"    queryMode="single" dictionary="t_s_depart,departname,"  width="120"></t:dgCol>
    <t:dgCol title="发布内容"  field="productContent"    queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="请选择上传的图片"  field="productLink"    queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
    <t:dgDelOpt title="删除" url="productInfoController.do?doDel&id={id}" urlclass="ace_button"  urlfont="fa-trash-o"/>
    <t:dgToolBar title="录入" icon="icon-add" url="productInfoController.do?goAdd" funname="add"></t:dgToolBar>

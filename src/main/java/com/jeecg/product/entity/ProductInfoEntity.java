@@ -22,7 +22,7 @@ import org.jeecgframework.poi.excel.annotation.Excel;
  * @Title: Entity
  * @Description: 公司产品表
  * @author onlineGenerator
- * @date 2017-04-21 20:23:25
+ * @date 2017-04-21 23:06:49
  * @version V1.0   
  *
  */
@@ -44,6 +44,9 @@ public class ProductInfoEntity implements java.io.Serializable {
 	/**发布内容*/
 	@Excel(name="发布内容")
 	private java.lang.String productContent;
+	/**请选择上传的图片*/
+	@Excel(name="请选择上传的图片")
+	private byte[] productLink;
 	
 	/**
 	 *方法: 取得java.lang.String
@@ -127,5 +130,21 @@ public class ProductInfoEntity implements java.io.Serializable {
 	 */
 	public void setProductContent(java.lang.String productContent){
 		this.productContent = productContent;
+	}
+	/**
+	 *方法: 取得java.sql.Blob
+	 *@return: java.sql.Blob  请选择上传的图片
+	 */
+	@Column(name ="PRODUCT_LINK",nullable=true)
+	public byte[] getProductLink(){
+		return this.productLink;
+	}
+
+	/**
+	 *方法: 设置java.sql.Blob
+	 *@param: java.sql.Blob  请选择上传的图片
+	 */
+	public void setProductLink(byte[] productLink){
+		this.productLink = productLink;
 	}
 }
