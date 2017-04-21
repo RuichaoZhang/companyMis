@@ -66,6 +66,7 @@ public class ProductInfoServiceImpl extends CommonServiceImpl implements Product
 		map.put("product_time", t.getProductTime());
 		map.put("product_type", t.getProductType());
 		map.put("product_content", t.getProductContent());
+		map.put("product_link", t.getProductLink());
 		return map;
 	}
  	
@@ -81,6 +82,7 @@ public class ProductInfoServiceImpl extends CommonServiceImpl implements Product
  		sql  = sql.replace("#{product_time}",String.valueOf(t.getProductTime()));
  		sql  = sql.replace("#{product_type}",String.valueOf(t.getProductType()));
  		sql  = sql.replace("#{product_content}",String.valueOf(t.getProductContent()));
+ 		sql  = sql.replace("#{product_link}",String.valueOf(t.getProductLink()));
  		sql  = sql.replace("#{UUID}",UUID.randomUUID().toString());
  		return sql;
  	}
