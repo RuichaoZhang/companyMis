@@ -12,7 +12,7 @@ if(!/^http(s*):\/\//.test(location.href)){
     alert('请部署到localhost上查看该演示');
 }
 
-layui.use('layim', function(layim){
+/*layui.use('layim', function(layim){
 //      //建立WebSocket通讯
     var socket = new WebSocket("ws://"+chatIp+":8080/jeecg/WebSocket/"+id);
 
@@ -106,5 +106,5 @@ layui.use('layim', function(layim){
 
     //初始最小化聊天界面
     //layim.setChatMin();
-});
+});*/
 //layim聊天组件end

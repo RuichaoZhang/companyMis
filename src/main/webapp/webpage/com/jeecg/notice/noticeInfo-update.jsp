@@ -56,8 +56,8 @@
 								发布内容:
 							</label>
 						</td>
-						<td class="value">
-						     	 <input id="noticeContent" name="noticeContent" type="text" style="width: 150px" class="inputxt"  value='${noticeInfoPage.noticeContent}'>
+						<td class="value" style="width: 500px; height: 100px;">
+							<textarea id="noticeContent" style="width: 500px; height: 100px;" name="noticeContent" type="text" class="textarea-css"  value='${noticeInfoPage.noticeContent}'></textarea>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">发布内容</label>
 						</td>

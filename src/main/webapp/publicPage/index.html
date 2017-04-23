@@ -119,9 +119,9 @@
 
                 <div class="col-md-4 col-sm-4 " ng-repeat="item in products">
                     <div class="alert alert-info">
-                        <img src="assets/img/products/{{$index}}.jpg" href="#modal-container" data-toggle="modal"
+                        <img src="../{{item.realpath}}" href="#modal-container" data-toggle="modal"
                              ng-click="selectProduct(item)" class="img-responsive " alt="" />
-                        <h3 ng-bind="item.productName"></h3>
+                        <h3 ng-bind="item.product_name"></h3>
                     </div>
 
                 </div>
@@ -133,15 +133,15 @@
                             <button type="button" class="close" data-dismiss="modal"
                                     aria-hidden="true">×</button>
                             <h4 class="modal-title text-center" id="myModalLabel">
-                                <code ng-bind="currentProduct.productName"></code>
+                                <code ng-bind="currentProduct.product_name"></code>
                             </h4>
                         </div>
                         <div class=" modal-body row col-md-11 col-md-offset-1">
                             <div class="col-md-4">
-                                <img src="assets/img/products/1.jpg" class="img-responsive " alt="" />
+                                <img src="../{{currentProduct.realpath}}" class="img-responsive " alt="" />
                             </div>
                             <div class="col-md-8">
-                                <p class="lead text-left" ng-repeat="p in currentProduct.productContent">
+                                <p class="lead text-left" ng-repeat="p in currentProduct.product_content">
                                     &emsp;&emsp;<span ng-bind="p"></span>
                                 </p>
                             </div>

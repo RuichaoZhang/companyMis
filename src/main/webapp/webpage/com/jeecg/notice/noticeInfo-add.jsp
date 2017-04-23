@@ -58,11 +58,11 @@
 							发布内容:
 						</label>
 					</td>
-					<td class="value">
-					     	 <input id="noticeContent" name="noticeContent" type="text" style="width: 150px" class="inputxt" >
-							<span class="Validform_checktip"></span>
-							<label class="Validform_label" style="display: none;">发布内容</label>
-						</td>
+					<td class="value" style="width: 500px; height: 100px;">
+						<textarea id="noticeContent" style="width: 500px; height: 100px;" name="noticeContent" type="text"></textarea>
+						<span class="Validform_checktip"></span>
+						<label class="Validform_label" style="display: none;">发布内容</label>
+					</td>
 				</tr>
 			</table>
 		</t:formvalid>

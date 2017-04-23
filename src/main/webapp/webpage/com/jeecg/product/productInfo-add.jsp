@@ -60,11 +60,11 @@
 							发布内容:
 						</label>
 					</td>
-					<td class="value">
-					     	 <input id="productContent" name="productContent" type="text" style="width: 150px" class="inputxt" >
-							<span class="Validform_checktip"></span>
-							<label class="Validform_label" style="display: none;">发布内容</label>
-						</td>
+					<td class="value textarea-css">
+						<textarea id="productContent" name="productContent" type="text" class="textarea-css"></textarea>
+						<span class="Validform_checktip"></span>
+						<label class="Validform_label" style="display: none;">发布内容</label>
+					</td>
 				</tr>
 				<tr>
 					<td align="right">

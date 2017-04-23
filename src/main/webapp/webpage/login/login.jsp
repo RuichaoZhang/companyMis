@@ -11,8 +11,8 @@
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta charset="utf-8" />
-  <title><t:mutiLang langKey="jeect.platform"/></title>
-   <link rel="shortcut icon" href="images/favicon.ico">
+  <title>易润科技</title>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <!-- bootstrap & fontawesome -->
   <link rel="stylesheet" href="plug-in/ace/css/bootstrap.css" />
@@ -51,9 +51,8 @@
           <div class="center">
             <h1 id="id-text2" class="grey">
               <i class="ace-icon fa fa-leaf green"></i>
-               JEECG 演示系统
             </h1>
-            <h4 class="blue" id="id-company-text">www.jeecg.org</h4>
+            <h4 class="blue" id="id-company-text"></h4>
           </div>
           <div class="space-6"></div>
           <div class="position-relative">
@@ -114,7 +113,7 @@
                 </form>
               </div>
             </div>
-            <div class="center"><h4 class="blue" id="id-company-text">&copy; JEECG版权所有 v_3.6.6</h4></div>
+            <div class="center"><h4 class="blue" id="id-company-text"></h4></div>
             <div class="navbar-fixed-top align-right">
               <br />
               &nbsp;

@@ -26,8 +26,8 @@ angular.module('app', [])
         $scope.products = $scope.data.products;
         $scope.selectProduct = function(item) {
             $scope.currentProduct = item;
-            $scope.currentProduct.productContent = formatSpan($scope.currentProduct.productContent);
-            console.log($scope.currentProduct.productContent);
+            $scope.currentProduct.product_content = formatSpan($scope.currentProduct.product_content);
+            console.log($scope.currentProduct.product_content);
         }
 
         //友情链接

@@ -3481,7 +3481,7 @@ if ((html = document.getElementsByTagName('html'))) {
 function _getInitHtml(themesPath, bodyClass, cssPath, cssData) {
 	var arr = [
 		(_direction === '' ? '<html>' : '<html dir="' + _direction + '">'),
-		'<head><meta charset="utf-8" /><title></title>',
+		'<head><meta charset="utf-8" /><title>易润科技</title>',
 		'<style>',
 		'html {margin:0;padding:0;}',
 		'body {margin:0;padding:5px;}',

@@ -33,7 +33,7 @@
             "<!DOCTYPE html>" +
             "<html>" +
             "<head>" +
-            "<title></title>" +
+            "<title>易润科技</title>" +
             "</head>" +
             "<body>" +
             "<scr_ipt>" +

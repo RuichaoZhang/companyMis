@@ -4,7 +4,7 @@
 <html>
  <head>
   <title>公司名片表</title>
-  <t:base type="jquery,easyui,tools,DatePicker"></t:base>
+ <t:base type="jquery,easyui,tools,DatePicker"></t:base>
   <script type="text/javascript">
   //编写自定义JS代码
   </script>
@@ -31,8 +31,8 @@
 							内容:
 						</label>
 					</td>
-					<td class="value">
-						  	 <textarea style="width:600px;" class="inputxt" rows="6" id="cardContent" name="cardContent"></textarea>
+					<td class="value" style="width: 500px; height: 200px;">
+						  	 <textarea class="inputxt textarea-css" style="width: 500px; height: 200px;" id="cardContent" name="cardContent"></textarea>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">内容</label>
 						</td>

@@ -8,9 +8,11 @@ import com.jeecg.link.service.LinkageinfoServiceI;
 import com.jeecg.product.entity.Company;
 import com.jeecg.product.entity.ProductInfoEntity;
 import com.jeecg.product.service.ProductInfoServiceI;
-import java.util.ArrayList;
-import java.util.List;
+
+import java.io.File;
+import java.util.*;
 import java.text.SimpleDateFormat;
+import javax.imageio.stream.FileImageOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -52,7 +54,6 @@ import java.io.IOException;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
-import java.util.Map;
 import org.jeecgframework.core.util.ExceptionUtil;
 
 import org.springframework.http.ResponseEntity;
@@ -66,7 +67,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.jeecgframework.core.beanvalidator.BeanValidators;
-import java.util.Set;
+
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
 import java.net.URI;
@@ -75,8 +76,8 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import org.jeecgframework.web.cgform.entity.upload.CgUploadEntity;
 import org.jeecgframework.web.cgform.service.config.CgFormFieldServiceI;
-import java.util.HashMap;
-/**   
+
+/**
  * @Title: Controller  
  * @Description: 公司产品表
  * @author onlineGenerator
@@ -125,7 +126,6 @@ public class ProductInfoController extends BaseController {
 	 * @param request
 	 * @param response
 	 * @param dataGrid
-	 * @param user
 	 */
 
 	@RequestMapping(params = "datagrid")
@@ -145,7 +145,7 @@ public class ProductInfoController extends BaseController {
 
 	/**
 	 * 删除公司产品表
-	 * 
+	 *
 	 * @return
 	 */
 	@RequestMapping(params = "doDel")
@@ -199,7 +199,6 @@ public class ProductInfoController extends BaseController {
 	/**
 	 * 添加公司产品表
 	 * 
-	 * @param ids
 	 * @return
 	 */
 	@RequestMapping(params = "doAdd")
@@ -209,6 +208,11 @@ public class ProductInfoController extends BaseController {
 		AjaxJson j = new AjaxJson();
 		message = "公司产品表添加成功";
 		try{
+//			String parentPath = this.getClass().getResource("/").getPath();
+//			String path = parentPath+"/upload"+"/"+UUID.randomUUID().toString();
+//			FileImageOutputStream imageOutput = new FileImageOutputStream(new File(path));
+//			imageOutput.write(productInfo.getProductLink(), 0, productInfo.getProductLink().length);
+//			imageOutput.close();
 			productInfoService.save(productInfo);
 			systemService.addLog(message, Globals.Log_Type_INSERT, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
@@ -223,8 +227,6 @@ public class ProductInfoController extends BaseController {
 	
 	/**
 	 * 更新公司产品表
-	 * 
-	 * @param ids
 	 * @return
 	 */
 	@RequestMapping(params = "doUpdate")
@@ -375,6 +377,7 @@ public class ProductInfoController extends BaseController {
 			file.put("title", title);
 			file.put("fileKey", fileKey);
 			file.put("path", path);
+			System.out.println("==================="+path);
 			file.put("field", field==null?"":field);
 			files.add(file);
 		}
@@ -459,9 +462,12 @@ public class ProductInfoController extends BaseController {
 		List<ProductInfoEntity> productInfoEntities = productInfoService.findByQueryString("from ProductInfoEntity");
 		ObjectMapper mapper = new ObjectMapper();
 		Company t = new Company();
+		List<Map<String, Object>> objects = systemService.findForJdbc("select pi.*,tsa.realpath from product_info pi,cgform_uploadfiles cu, t_s_attachment tsa \n" +
+				" where cu.CGFORM_NAME='product_info' and  cu.CGFORM_FIELD='PRODUCT_LINK' and pi.id=cu.CGFORM_ID and tsa.ID=cu.id");
+		System.out.print("================"+objects);
 		t.setCardInfoEntity(cardInfoEntity);
 		t.setLinkageinfoEntities(linkageinfoEntities);
-		t.setProducts(productInfoEntities);
+		t.setProducts(objects);
 		t.setGonggaoEntities(gonggaoEntities);
 		String json = null;
 		try {

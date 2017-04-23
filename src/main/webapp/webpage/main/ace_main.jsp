@@ -4,12 +4,12 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title><t:mutiLang langKey="jeect.platform"/></title>
-		<meta name="keywords" content="<t:mutiLang langKey="jeect.platform"/>" />
-		<meta name="description" content="<t:mutiLang langKey="jeect.platform"/>" />
+		<title>易润科技</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="plug-in/jquery/jquery.contextmenu.css"/>
-		<link rel="shortcut icon" href="images/favicon.ico">
+
 		<!-- basic styles -->
 		<link href="plug-in/ace/assets/css/bootstrap.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="plug-in/ace/assets/css/font-awesome.min.css" />
@@ -59,7 +59,7 @@
 					<a href="#" class="navbar-brand">
 						<small>
 							<i class="icon-leaf"></i>
-							JEECG 微云快速开发平台
+
 						</small>
 					</a><!-- /.brand -->
 				</div><!-- /.navbar-header -->
@@ -348,7 +348,7 @@
 					</div><!-- /.page-content -->
 				</div><!-- /.main-content -->
 
-				<div class="ace-settings-container" id="ace-settings-container">
+				<%--<div class="ace-settings-container" id="ace-settings-container">
 					<div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
 						<i class="icon-cog bigger-150"></i>
 					</div>
@@ -394,12 +394,12 @@
 							</label>
 						</div>
 					</div>
-				</div><!-- /#ace-settings-container -->
+				</div>--%><!-- /#ace-settings-container -->
 			</div><!-- /.main-container-inner -->
 
-			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+			<%--<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
 				<i class="icon-double-angle-up icon-only bigger-110"></i>
-			</a>
+			</a>--%>
 		</div><!-- /.main-container -->
 
 

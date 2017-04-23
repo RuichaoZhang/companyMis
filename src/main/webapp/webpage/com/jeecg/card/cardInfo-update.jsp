@@ -31,8 +31,8 @@
 								内容:
 							</label>
 						</td>
-						<td class="value">
-						  	 	<textarea id="cardContent" style="width:600px;" class="inputxt" rows="6" name="cardContent">${cardInfoPage.cardContent}</textarea>
+						<td class="value" style="width: 500px; height: 200px;">
+						  	 	<textarea id="cardContent" style="width: 500px; height: 200px;" class="inputxt" name="cardContent">${cardInfoPage.cardContent}</textarea>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">内容</label>
 						</td>

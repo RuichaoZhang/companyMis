@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
+        <title>易润科技</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <t:base type="jquery,easyui,tools"></t:base>
 		<link rel="stylesheet" href="plug-in/Validform/css/style.css" type="text/css"/>

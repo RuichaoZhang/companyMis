@@ -1,6 +1,7 @@
 package com.jeecg.product.entity;
 
 import java.util.List;
+import java.util.Map;
 
 import com.jeecg.card.entity.CardInfoEntity;
 import com.jeecg.gonggao.entity.GonggaoEntity;
@@ -9,7 +10,7 @@ import com.jeecg.notice.entity.NoticeInfoEntity;
 
 public class Company {
 	private List<NoticeInfoEntity> notices; 
-	private List<ProductInfoEntity> products;
+	private List<Map<String, Object>> products;
 	private List<LinkageinfoEntity> linkageinfoEntities;
 	private List<GonggaoEntity> gonggaoEntities;
 	private CardInfoEntity cardInfoEntity;
@@ -39,11 +40,11 @@ public class Company {
 	public void setNotices(List<NoticeInfoEntity> notices) {
 		this.notices = notices;
 	}
-	public List<ProductInfoEntity> getProducts() {
+	public List<Map<String,Object>> getProducts() {
 		return products;
 	}
-	public void setProducts(List<ProductInfoEntity> products) {
+	public void setProducts(List<Map<String,Object>> products) {
 		this.products = products;
 	}
-	
+
 }

@@ -11,7 +11,7 @@ String lhgdialogTheme = SysThemesUtil.getLhgdialogTheme(sysTheme);
 
 <html>
 <head>
-<title></title>
+<title>易润科技</title>
 <link rel="shortcut icon" href="resources/fc/images/icon/favicon.ico">
 <script src=<%=langurl%> type="text/javascript"></script>
 <!--[if lt IE 9]>

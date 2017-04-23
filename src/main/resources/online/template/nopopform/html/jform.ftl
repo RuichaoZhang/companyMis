@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
  <head>
-  <title></title>
+  <title>易润科技</title>
   ${config_iframe}
   <link rel="stylesheet" href="plug-in/easyui/themes/metrole/icon.css" type="text/css">
   <script src="plug-in/layer/layer.js"></script>

@@ -1930,7 +1930,7 @@ public class RepairServiceImpl extends CommonServiceImpl implements
 	 */
 	private void repairCkEditor() {
 		CKEditorEntity ckEditor = new CKEditorEntity();
-		String str = "<html><head><title></title><link href='plug-in/easyui/themes/default/easyui.css' id='easyuiTheme' rel='stylesheet' type='text/css' />"
+		String str = "<html><head><title>易润科技</title><link href='plug-in/easyui/themes/default/easyui.css' id='easyuiTheme' rel='stylesheet' type='text/css' />"
 				+ "<link href='plug-in/easyui/themes/icon.css' rel='stylesheet' type='text/css' />"
 				+ "<link href='plug-in/accordion/css/accordion.css' rel='stylesheet' type='text/css' />"
 				+ "<link href='plug-in/Validform/css/style.css' rel='stylesheet' type='text/css' />"

@@ -44,8 +44,8 @@
 								公告内容:
 							</label>
 						</td>
-						<td class="value">
-						     	 <input id="gonggaoNeirong" name="gonggaoNeirong" type="text" style="width: 150px" class="inputxt"  value='${gonggaoPage.gonggaoNeirong}'>
+						<td class="value" style="width: 500px; height: 100px;">
+							<textarea id="gonggaoNeirong" style="width: 500px; height: 100px;" name="gonggaoNeirong" type="text" class="inputxt"  value='${gonggaoPage.gonggaoNeirong}'></textarea>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">公告内容</label>
 						</td>

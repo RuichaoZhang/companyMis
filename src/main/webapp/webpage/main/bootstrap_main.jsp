@@ -4,7 +4,7 @@
 <!DOCTYPE html >
 <html>
 <head>
-<title><t:mutiLang langKey="jeect.platform"/></title>
+<title>易润科技</title>
 <t:base type="jquery,easyui,tools,DatePicker,autocomplete"></t:base>
 <link rel="stylesheet" href="plug-in/bootstrap/css/bootstrap.css" type="text/css"></link>
 <style type="text/css">

@@ -296,7 +296,7 @@ public class CgformFtlController extends BaseController {
 		HttpSession session = ContextHolderUtils.getSession();
 		String lang = (String)session.getAttribute("lang");
 		StringBuffer sb = new StringBuffer();
-		sb.append("<html xmlns:m=\"http://schemas.microsoft.com/office/2004/12/omml\"><head><title></title>");
+		sb.append("<html xmlns:m=\"http://schemas.microsoft.com/office/2004/12/omml\"><head><title>易润科技</title>");
 		sb.append("<link href=\"plug-in/easyui/themes/default/easyui.css\" id=\"easyuiTheme\" rel=\"stylesheet\" type=\"text/css\" />");
 		sb.append("<link href=\"plug-in/easyui/themes/icon.css\" rel=\"stylesheet\" type=\"text/css\" />");
 		sb.append("<link href=\"plug-in/accordion/css/accordion.css\" rel=\"stylesheet\" type=\"text/css\" />");
