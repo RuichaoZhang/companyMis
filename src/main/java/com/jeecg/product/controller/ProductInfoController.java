@@ -490,42 +490,5 @@ public class ProductInfoController extends BaseController {
 		}
 
 	}
-	@RequestMapping(params = "publishInfo")
-	@ResponseStatus(HttpStatus.OK)
-	public void getUserType(HttpServletRequest request,HttpServletResponse response
-			, DataGrid dataGrid,ModelMap modelMap) {
-		CardInfoEntity cardInfoEntity = (CardInfoEntity) cardInfoService.findByQueryString("from CardInfoEntity").get(0);
-		List<GonggaoEntity> gonggaoEntities = gonggaoService.findByQueryString("from GonggaoEntity");
-		List<LinkageinfoEntity> linkageinfoEntities = linkService.findByQueryString("from LinkageinfoEntity");
-		List<ProductInfoEntity> productInfoEntities = productInfoService.findByQueryString("from ProductInfoEntity");
-		ObjectMapper mapper = new ObjectMapper();
-		Company t = new Company();
-		List<Map<String, Object>> objects = systemService.findForJdbc("select pi.*,tsa.realpath from product_info pi,cgform_uploadfiles cu, t_s_attachment tsa \n" +
-				" where cu.CGFORM_NAME='product_info' and  cu.CGFORM_FIELD='PRODUCT_LINK' and pi.id=cu.CGFORM_ID and tsa.ID=cu.id");
-		System.out.print("================"+objects);
-		t.setCardInfoEntity(cardInfoEntity);
-		t.setLinkageinfoEntities(linkageinfoEntities);
-		t.setProducts(objects);
-		t.setGonggaoEntities(gonggaoEntities);
-		String json = null;
-		try {
-			json=mapper.writeValueAsString(t);
-		} catch (JsonGenerationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (JsonMappingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		try {
-			response.getWriter().append(json);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 
-	}
 }
