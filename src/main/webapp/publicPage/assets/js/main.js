@@ -6,7 +6,7 @@ angular.module('app', [])
         }
 
         $.ajax({
-            url: '/jeecgos/productInfoController.do?publishInfo',
+            url: '/jeecg/productInfoController.do?publishInfo',
             async: false,
             success: function(data){
                 $scope.data = eval('(' + data + ')');
