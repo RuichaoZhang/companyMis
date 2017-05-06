@@ -139,7 +139,7 @@
                     </li> --%>
                     
                     <li class="dropdown">
-                    	<a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                    	<a class="dropdown-toggle count-info" href="#">
                                 <span ><strong class="font-bold">${userName }</strong></span>
                                 <span >${roleName }<b class="caret"></b></span>
                         </a>
@@ -161,11 +161,7 @@
                     </li>
                     
                      
-                    <li class="dropdown hidden-xs">
-                        <a class="right-sidebar-toggle" aria-expanded="false">
-                            <i class="fa fa-tasks"></i> 主题
-                        </a>
-                    </li>
+
                       <li class="dropdown">
                      <a href="javascript:logout()" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a>
                      </li>

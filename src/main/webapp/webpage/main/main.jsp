@@ -3,7 +3,7 @@
 <!DOCTYPE html >
 <html>
 <head>
-<title>易润科技</title>
+<title> </title>
 <t:base type="jquery,easyui,tools,DatePicker,autocomplete"></t:base>
 <script type="text/javascript" src="plug-in/easyui/portal/jquery.portal.js"></script>
 <link rel="stylesheet" type="text/css" href="plug-in/easyui/portal/portal.css">

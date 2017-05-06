@@ -6,7 +6,7 @@ angular.module('app', [])
         }
 
         $.ajax({
-            url: '/jeecg/productInfoController.do?publishInfo',
+            url: '/jeecgos/productInfoController.do?publishInfo',
             async: false,
             success: function(data){
                 $scope.data = eval('(' + data + ')');
@@ -57,7 +57,7 @@ angular.module('app', [])
                 $scope.tipContent = '说点什么吧!';
                 return;
             }
-            $.post('/boardInfoController.do?doAdd', {
+            $.post('/jeecgos/boardInfoController.do?doAdd', {
                 boadrPerson: $scope.boadrPerson,
                 boadrCompany: $scope.boadrCompany,
                 boadrTel: $scope.boadrTel,

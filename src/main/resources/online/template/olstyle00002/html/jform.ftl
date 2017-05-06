@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
  <head>
-  <title>易润科技</title>
+  <title></title>
   ${config_iframe}
  </head>
  <body style="overflow-y: hidden; overflow-x: hidden;" scroll="no">

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>易润科技</title>
+        <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <t:base type="jquery,easyui,tools"></t:base>
         <script type="text/javascript" src="plug-in/jquery-plugs/form/jquery.form.js"></script>
